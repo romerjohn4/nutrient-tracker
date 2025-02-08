@@ -60,7 +60,7 @@ return (
             <h1 className="ml-4 text-4xl font-bold mb-2 underline text-purple-300">Nutrient Checker Application</h1>
         </div>
         <div className="flex items-center justify-center ">
-            <p className="ml-4 text-4xl font-bold text-purple-300 mb-12">Check the nutrients of your meals and snacks and see how it affects your health!</p>
+            <p className="ml-4 text-4xl font-bold text-purple-300 mb-12">Check the nutrients of your meals and snacks and see how what kind of nutrients there is!</p>
         </div>
         <div>
             <SearchBar setSelectedItemName={handleItemSelect} onSearch={getFoodData} />
