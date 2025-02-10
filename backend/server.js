@@ -8,16 +8,21 @@ app.use(cors());
 
 // Create a MySQL connection
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "applejuiceisgood1234$",
-    database: "nutrient_checker",
+    host: process.env.DB_HOST || "localhost",
+    user: process.env.DB_USER || "root",
+    password: process.env.DB_PASSWORD || "applejuiceisgood1234$",
+    database: process.env.DB_NAME || "nutrient_checker",
 });
 
 // Connect to the database
 db.connect((err) => {
     if (err) throw err;
     console.log("MySQL connected...");
+});
+
+// Root route
+app.get("/", (req, res) => {
+    res.send("Welcome to the Nutrient Tracker API");
 });
 
 // API endpoint to fetch all nutrients
